@@ -1,2 +1,19 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.haml
+.container.row.center
+	%h2
+		All ~Adventures~ YOLO 
+	- @items.each do |item|
+		.card.col.l5
+			.card-image.waves-effect.waves-block.waves-light
+				%img.activator{src: "https://collegecandy.files.wordpress.com/2015/09/screen-shot-2015-09-04-at-10-54-29-am.png?w=594"}
+			.card-content
+				%span.card-title.activator.grey-text.text-darken-4 
+					= item.name
+					%i.material-icons.right
+						more_vert
+			.card-reveal
+				%span.card-title.grey-text.text-darken-4
+					= item.name
+					%i.material-icons.right
+						close
+				%p 
+					= item.description

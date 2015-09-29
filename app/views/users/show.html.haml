@@ -1,2 +1,38 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+.container
+	.row
+		.col.l3
+			%img.responsive-img.circle{src: "https://pbs.twimg.com/media/CN_bxAqWUAA5UFh.jpg"}
+		.col.l9
+			%h3.center-align
+				Adventurer
+	.row
+		.col.l3
+			%ul
+				%li
+					= "Username: #{@user.user_name}"
+				%li
+					= "About Me: #{@user.about_me}"
+				%li
+					= "Location: #{@user.location}"
+		.col.l9
+			%h3
+				Pail Plan: The better bucket list
+	.row
+		- @user.items.each do |item|
+			.card.col.l5
+				.card-image.waves-effect.waves-block.waves-light
+					%img.activator{src: "https://collegecandy.files.wordpress.com/2015/09/screen-shot-2015-09-04-at-10-54-29-am.png?w=594"}
+				.card-content
+					%span.card-title.activator.grey-text.text-darken-4 
+						= item.name
+						%i.material-icons.right
+							more_vert
+				.card-reveal
+					%span.card-title.grey-text.text-darken-4
+						= item.name
+						%i.material-icons.right
+							close
+					%p 
+						= item.description
+
+	
