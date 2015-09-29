@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   root 'items#index'
 
-  get 'items/show'
+  resources :users
+  resources :items
+  # get 'items/show'
 
-  get 'items/new'
+  # get 'items/new'
 
-  get 'users/show'
+  # get 'users/show'
 
-  get 'users/index'
+  # get 'users/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

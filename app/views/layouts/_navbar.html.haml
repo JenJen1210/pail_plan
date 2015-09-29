@@ -1,0 +1,11 @@
+%nav
+	.nav-wrapper
+		%ul#nav-mobile.right.hide-on-med-and-down
+			%li
+				= link_to 'Home', root_path
+			%li
+				= link_to 'My Profile', user_path(current_user)
+			%li
+				= link_to 'All Users', users_path
+			%li
+				= link_to 'New Adventure', new_item_path

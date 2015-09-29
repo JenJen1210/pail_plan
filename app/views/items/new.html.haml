@@ -1,2 +1,23 @@
-%h1 Items#new
-%p Find me in app/views/items/new.html.haml
+.container
+	%h1 
+		Create a New ~Adventure~
+	= form_for @item do |f|
+		.field
+			= f.label :name
+			%br/
+			= f.text_field :name
+		.field
+			= f.label :description
+			%br/
+			= f.text_field :description
+		.field
+			= f.label :category
+			%br/
+			= f.text_field :category
+		.field
+			= f.label :incomplete
+			%br/
+			= f.text_field :incomplete
+			%br/
+		.actions
+			= f.submit "YOLO", class: "btn"

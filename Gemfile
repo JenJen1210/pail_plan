@@ -41,6 +41,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'simplecov'
