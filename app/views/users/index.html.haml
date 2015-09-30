@@ -1,2 +1,13 @@
-%h1 Users#index
-%p Find me in app/views/users/index.html.haml
+.container.row
+  %h1.center
+    Fellow {Adventurers}
+  - @users.each do |user|
+    .col.s12.l5
+      .card
+        .card-image
+          %img.circle{src: "http://www.newsmax.com/Newsmax/files/e5/e5d3812c-214e-4cfa-9f8a-4a0c5a548630.jpg"}
+        .card-content
+          %span.card-title.black-text
+            = user.user_name
+          %p
+            = user.about_me
