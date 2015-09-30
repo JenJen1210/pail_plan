@@ -15,9 +15,6 @@
 			%br/
 			= f.text_field :category
 		.field
-			= f.label :incomplete
-			%br/
-			= f.text_field :incomplete
-			%br/
+			= f.hidden_field :user_id, {value: current_user.id }
 		.actions
 			= f.submit "YOLO", class: "btn"

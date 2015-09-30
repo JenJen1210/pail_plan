@@ -10,6 +10,11 @@
 					= item.name
 					%i.material-icons.right
 						more_vert
+				.row
+					%button.btn
+						= link_to 'Add', copy_path(:item_id => item.id)
+					%i.material-icons.medium
+						stars
 			.card-reveal
 				%span.card-title.grey-text.text-darken-4
 					= item.name
