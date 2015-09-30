@@ -12,7 +12,7 @@
 <%= render 'layouts/navbar' %>
 <div class="row">
 	<div class="right col offset-l1">
-		<%= "Welcome, #{current_user.user_name}" %>
+    <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
 	</div>
 </div>
 <%= yield %>
