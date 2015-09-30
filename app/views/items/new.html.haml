@@ -2,19 +2,24 @@
 	%h1 
 		Create a New ~Adventure~
 	= form_for @item do |f|
-		.field
+		.input-field
 			= f.label :name
 			%br/
 			= f.text_field :name
-		.field
+		.input-field
 			= f.label :description
 			%br/
 			= f.text_field :description
-		.field
-			= f.label :category
-			%br/
-			= f.text_field :category
-		.field
+		.input-field
+			%select
+				%option{:value => "Travel"} Travel
+				%option{:value => "Life Choices"} Life Choices
+				%option{:value => "Food & Drink"} Food & Drink
+				%option{:value => "Career"} Career
+				%option{:value => "Family"} Family
+				%option{:value => "Other"} Other
+			%label Category
+		.input-field
 			= f.hidden_field :user_id, {value: current_user.id }
 		.actions
 			= f.submit "YOLO", class: "btn"
