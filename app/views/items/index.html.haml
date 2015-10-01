@@ -19,7 +19,7 @@
 	- @items.each do |item|
 		.card.col.l6.center
 			.card-image.waves-effect.waves-block.waves-light
-				%img.activator{src: "https://collegecandy.files.wordpress.com/2015/09/screen-shot-2015-09-04-at-10-54-29-am.png?w=594"}
+				= image_tag item.image.url(:medium)
 			.card-content
 				%span.card-title.activator.grey-text.text-darken-4
 					= item.name

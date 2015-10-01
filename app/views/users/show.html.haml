@@ -1,28 +1,27 @@
 .container
 	.row
-		%h1.center-align
-			= "{#{@user.user_name}}"
+		.col.l9.offset-l3
+			%h1.center-align.grey-text.text-darken-3
+				= "{#{@user.user_name}}"
 		.col.l3
-			%img.responsive-img.circle{src: "https://pbs.twimg.com/media/CN_bxAqWUAA5UFh.jpg"}
-		.col.l9
-			%h5.left-align
-				= "#{@user.about_me}"
-
-	.row
-		.col.l3
+			= image_tag @user.avatar.url(:medium), class: 'responsive-img circle'
 			%ul
 				%li
 					= "Username: #{@user.user_name}"
 				%li
 					= "Location: #{@user.location}"
+		.col.l9
+			%h5.center-align
+				= "#{@user.about_me}"
+
 	.row
 		- if @user.id == current_user.id
 			- @user.items.each do |item|
 				.card.col.l6.center
 					.card-image.waves-effect.waves-block.waves-light
-						%img.activator{src: "https://collegecandy.files.wordpress.com/2015/09/screen-shot-2015-09-04-at-10-54-29-am.png?w=594"}
+						= image_tag item.image.url(:medium), class: 'activator'
 					.card-content
-						%span.card-title.activator.grey-text.text-darken-4 
+						%span.card-title.activator.grey-text.text-darken-4
 							= item.name
 							%i.material-icons.right
 								more_vert
@@ -35,13 +34,13 @@
 							= item.name
 							%i.material-icons.right
 								close
-						%p 
+						%p
 							= item.description
-		- else 
+		- else
 			- @items.each do |item|
 				.card.col.l5
 					.card-image.waves-effect.waves-block.waves-light
-						%img.activator{src: "https://collegecandy.files.wordpress.com/2015/09/screen-shot-2015-09-04-at-10-54-29-am.png?w=594"}
+						= image_tag item.image.url(:medium), class: 'activator'
 					.card-content
 						%span.card-title.activator.grey-text.text-darken-4
 							= item.name
@@ -59,6 +58,3 @@
 								close
 						%p
 							= item.description
-
-
-	

@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   def create_copy
     @item = Item.find(params[:item_id])
     @item_copy = Item.new
-    @item_copy.copy_item(current_user.id, @item.name, @item.description, @item.category)
+    @item_copy.copy_item(current_user.id, @item.name, @item.description, @item.category, @item.image)
     if @item.save
       flash[:success] = "Adventure Added"
       redirect_to items_path
@@ -23,6 +23,19 @@ class ItemsController < ApplicationController
 
   def new
   	@item = Item.new
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
   end
 
   def create
@@ -43,6 +56,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-  	params.require(:item).permit(:name, :description, :category, :likes, :incomplete, :user_id)
+  	params.require(:item).permit(:name, :description, :category, :likes, :incomplete, :user_id, :image)
   end
 end
