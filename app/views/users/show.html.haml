@@ -1,11 +1,11 @@
 .container
 	.row
+		%h1.center-align
+			= "{#{@user.user_name}}"
 		.col.l3
 			%img.responsive-img.circle{src: "https://pbs.twimg.com/media/CN_bxAqWUAA5UFh.jpg"}
 		.col.l9
-			%h3.center-align
-				{Adventurer}
-			%h5.center-align
+			%h5.left-align
 				= "#{@user.about_me}"
 
 	.row
@@ -15,9 +15,6 @@
 					= "Username: #{@user.user_name}"
 				%li
 					= "Location: #{@user.location}"
-		.col.l9
-			%h3
-				Pail Plan: The better bucket list
 	.row
 		- if @user.id == current_user.id
 			- @user.items.each do |item|
