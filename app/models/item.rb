@@ -7,8 +7,8 @@ class Item < ActiveRecord::Base
   	Item.create(user_id: user_id, name: name, description: description, category: category, image: image)
   end
 
-  def categories
-
+  def self.by_category(category)
+  	where(category: category)
   end
 
 end

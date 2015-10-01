@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   root 'items#index'
 
   get '/copy', to: 'items#create_copy'
+  get '/travel', to: 'items#travel' 
+  get '/life_choices', to: 'items#life_choices'
+  get '/food_drink', to: 'items#food_drink'
+  get '/career', to: 'items#career'
+  get '/family', to: 'items#family'
+  get '/other', to: 'items#other'
 
   resources :users
   resources :items

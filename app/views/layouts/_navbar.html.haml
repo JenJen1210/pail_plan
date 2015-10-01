@@ -1,9 +1,26 @@
+.ul#dropdown1.dropdown-content
+	%li
+		= link_to 'Travel', travel_path
+	%li
+		= link_to 'Life Choices', life_choices_path
+	%li
+		= link_to 'Food & Drink', food_drink_path
+	%li
+		= link_to 'Career', career_path
+	%li
+		= link_to 'Family', family_path
+	%li
+		= link_to 'Other', other_path
 %nav.grey
 	.nav-wrapper
 		%img.custom_logo{src:"https://www.tailorbrands.com/dewey/brand_version_mockup_image/8418306_5263ed19-9cbd-47a2-94d5-54344924dc3a.png?cb=1443666407"}
 		%ul#nav-mobile.right.hide-on-med-and-down
 			%li
 				= link_to 'Home', root_path
+			%li.dropdown-button{'data-activates' => 'dropdown1'}
+				Categories
+				%i.material-icons.right
+					arrow_drop_down
 			%li 
 				= link_to 'Your Profile', user_path(current_user)
 			%li
@@ -12,3 +29,4 @@
 				= link_to 'New Adventure', new_item_path
 			%li
 				= link_to 'Logout', destroy_user_session_path, :method => :delete 
+			

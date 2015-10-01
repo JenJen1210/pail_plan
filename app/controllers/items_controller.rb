@@ -53,6 +53,30 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def travel
+    @items = Item.by_category('Travel')
+  end
+
+  def life_choices
+    @items = Item.by_category('Life Choices')
+  end
+
+  def food_drink
+    @items = Item.by_category('Food & Drink')
+  end
+
+  def career
+    @items = Item.by_category('Career')
+  end
+
+  def family
+    @items = Item.by_category('Family')
+  end
+
+  def other
+    @items = Item.by_category('Other')
+  end
+
   private
 
   def item_params

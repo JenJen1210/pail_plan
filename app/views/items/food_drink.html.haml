@@ -1,0 +1,24 @@
+.container.row.center
+	- @items.each do |item|
+		.card.col.l6.center
+			.card-image.waves-effect.waves-block.waves-light
+				= image_tag item.image.url(:medium)
+			.card-content
+				%span.card-title.activator.grey-text.text-darken-4
+					= item.name
+					%i.material-icons.right
+						more_vert
+				.row
+					= link_to copy_path(:item_id => item.id) do
+						%i.material-icons.black-text.medium
+							play_circle_filled
+
+					%i.material-icons.medium.like_icon
+						stars
+			.card-reveal
+				%span.card-title.grey-text.text-darken-4
+					= item.name
+					%i.material-icons.right
+						close
+				%p
+					= item.description
