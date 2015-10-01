@@ -11,13 +11,7 @@
 			%br/
 			= f.text_field :description
 		.input-field
-			%select
-				%option{:value => "Travel"} Travel
-				%option{:value => "Life Choices"} Life Choices
-				%option{:value => "Food & Drink"} Food & Drink
-				%option{:value => "Career"} Career
-				%option{:value => "Family"} Family
-				%option{:value => "Other"} Other
+			= f.select :category, options_for_select(['Travel', 'Life Choices', 'Food & Drink', 'Career', 'Family', 'Other'])
 			%label Category
 		.input-field
 			= f.hidden_field :user_id, {value: current_user.id }

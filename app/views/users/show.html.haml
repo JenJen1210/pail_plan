@@ -4,14 +4,15 @@
 			%img.responsive-img.circle{src: "https://pbs.twimg.com/media/CN_bxAqWUAA5UFh.jpg"}
 		.col.l9
 			%h3.center-align
-				Adventurer
+				{Adventurer}
+			%h5.center-align
+				= "#{@user.about_me}"
+
 	.row
 		.col.l3
 			%ul
 				%li
 					= "Username: #{@user.user_name}"
-				%li
-					= "About Me: #{@user.about_me}"
 				%li
 					= "Location: #{@user.location}"
 		.col.l9
@@ -20,7 +21,7 @@
 	.row
 		- if @user.id == current_user.id
 			- @user.items.each do |item|
-				.card.col.l5
+				.card.col.l6.center
 					.card-image.waves-effect.waves-block.waves-light
 						%img.activator{src: "https://collegecandy.files.wordpress.com/2015/09/screen-shot-2015-09-04-at-10-54-29-am.png?w=594"}
 					.card-content
@@ -29,8 +30,9 @@
 							%i.material-icons.right
 								more_vert
 						.row
-							%button.btn
-								= link_to "Delete", item, method: :delete
+							= link_to item, method: :delete do
+								%i.material-icons.black-text.medium
+									not_interested
 					.card-reveal
 						%span.card-title.grey-text.text-darken-4
 							= item.name
@@ -50,7 +52,7 @@
 								more_vert
 						.row
 							%button.btn
-								= link_to 'Add', copy_path(:item_id => item.id)
+								= link_to 'Add', copy_path(:item_id => item.id), class: 'white-text'
 							%i.material-icons.medium
 								stars
 					.card-reveal

@@ -1,8 +1,23 @@
+.parallax-container
+	.parallax
+		%img{src:"https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/12043160_10152978231381261_2152549155616654743_n.jpg?oh=45b7baa680d0d76d9d4aeb925e8ab1cf&oe=5685FC19"}
+.section.white
+	.row.container
+		%h2.header
+			PailPlan
+		%p.grey-text.text-darken-3.lighten-3
+			PailPlan is Put a bird on it Brooklyn beard cronut XOXO tousled PBR&B banjo 3 wolf moon, organic locavore next level. Gentrify typewriter single-origin coffee literally brunch actually. Jean shorts mlkshk vegan single-origin coffee, asymmetrical locavore cornhole squid McSweeney's keytar. +1 pork belly leggings pour-over keffiyeh scenester, letterpress bitters salvia raw denim gentrify American Apparel lo-fi mixtape plaid. Listicle stumptown swag lo-fi. Slow-carb mlkshk whatever Brooklyn, Odd Future Neutra tofu Marfa lomo street art distillery retro irony pickled. Brunch Helvetica cardigan, narwhal synth fixie Austin typewriter hashtag scenester.
+.parallax-container
+	.parallax
+		%img{src:"https://s-media-cache-ak0.pinimg.com/originals/97/ea/bb/97eabb7bab39c804ebbc403c98eea81b.png"}
+.section.white
+	.row.container
+		%h2.header
+			{find your next adventure}
+
 .container.row.center
-	%h2
-		All ~Adventures~ YOLO
 	- @items.each do |item|
-		.card.col.l5
+		.card.col.l6.center
 			.card-image.waves-effect.waves-block.waves-light
 				%img.activator{src: "https://collegecandy.files.wordpress.com/2015/09/screen-shot-2015-09-04-at-10-54-29-am.png?w=594"}
 			.card-content
@@ -11,9 +26,11 @@
 					%i.material-icons.right
 						more_vert
 				.row
-					%button.btn
-						= link_to 'Add', copy_path(:item_id => item.id)
-					%i.material-icons.medium
+					= link_to copy_path(:item_id => item.id) do
+						%i.material-icons.black-text.medium
+							play_circle_filled
+
+					%i.material-icons.medium.like_icon
 						stars
 			.card-reveal
 				%span.card-title.grey-text.text-darken-4

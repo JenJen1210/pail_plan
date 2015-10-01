@@ -5,4 +5,8 @@ class Item < ActiveRecord::Base
   	Item.create(user_id: user_id, name: name, description: description, category: category)
   end
 
+  def categories
+
+  end
+
 end

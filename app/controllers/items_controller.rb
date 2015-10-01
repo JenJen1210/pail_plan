@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
   	@items = Item.all
+    @unique_items = Item.select(:title).distinct
   end
 
   def create_copy
