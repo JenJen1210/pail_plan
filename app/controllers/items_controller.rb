@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def index
   	@items = Item.all
-    @unique_items = Item.select(:name).distinct
+    @unique_items = Item.uniq.pluck(:name)
   end
 
   def create_copy
