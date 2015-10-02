@@ -5,6 +5,7 @@ RSpec.describe User, type: :model do
     it { should respond_to(:user_name) }
     it { should respond_to(:about_me) }
     it { should respond_to(:location) }
+    it { should respond_to(:avatar) }
     it { should have_many(:items) }
   end
 

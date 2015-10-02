@@ -1,20 +1,13 @@
 class ItemsController < ApplicationController
   def index
   	@items = Item.all
-    @unique_items = Item.select(:title).distinct
+    @unique_items = Item.select(:name).distinct
   end
 
   def create_copy
     @item = Item.find(params[:item_id])
     @item_copy = Item.new
     @item_copy.copy_item(current_user.id, @item.name, @item.description, @item.category, @item.image)
-    if @item.save
-      flash[:success] = "Adventure Added"
-      redirect_to items_path
-    else
-      flash[:error] = "Item not added"
-      redirect_to items_path
-    end
   end
 
   def show

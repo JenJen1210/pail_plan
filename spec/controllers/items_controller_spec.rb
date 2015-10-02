@@ -29,4 +29,27 @@ RSpec.describe ItemsController, type: :controller do
     end
   end
 
+  describe 'PUT #update' do
+    it 'updates an item' do
+      update_params = {id: item.id, item: {name: 'updated'}}
+      put :update, update_params
+      @item = @item.reload
+      expect(@item.name).to eq('updated')
+    end
+
+    it 'renders edit template on error' do
+      update_params = {id: item.id, item: {name: nil}}
+      put :update, update_params
+      expect(response).to render_template('edit')
+    end
+
+    it 'will not save without a name' do
+      update_params = {id: item.id, item: {name: nil}}
+      put :update, update_params
+      @item = @item.reload
+      expect(@item.name).to eq('MyString')
+    end
+
+  end
+
 end
