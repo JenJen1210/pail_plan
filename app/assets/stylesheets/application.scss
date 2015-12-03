@@ -15,8 +15,26 @@
  */
 @import 'materialize';
 
+body {
+	background-color: lightgrey;
+}
+
 
 .custom_logo {
 	width: 40px;
 	height: 65px;
+	margin: 20px;
+}
+
+nav {
+	height: 100px;
+}
+
+#categories {
+	padding-left: 20px;
+}
+
+.card-image {
+	padding-top: 20px;
+	max-height: 300px;
 }
